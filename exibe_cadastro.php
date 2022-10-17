@@ -2,7 +2,7 @@
     require('conect.php');
 
         
-    $sql_all="SELECT id, nome, perfil, cep, cpf, email FROM `tb_usuarios`";
+    $sql_all="SELECT id, nome, perfil, cpf, email FROM `tb_usuarios`";
     
     $result=mysqli_query($conecta,$sql_all);
         while($consulta_count=mysqli_fetch_array($result))
@@ -15,7 +15,6 @@
             echo "<td>".$consulta_count['id']."</td>";
             echo "<td>".$consulta_count['nome']."</td>";
             echo "<td>".$consulta_count['perfil']."</td>";
-            echo "<td>".$consulta_count['cep']."</td>";
             echo "<td>".$consulta_count['cpf']."</td>";
             echo "<td>".$consulta_count['email']."</td>";
             echo "</tr>";

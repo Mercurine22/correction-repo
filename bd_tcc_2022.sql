@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 25, 2022 at 11:00 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.27
+-- Tempo de geração: 17-Out-2022 às 13:26
+-- Versão do servidor: 10.3.16-MariaDB
+-- versão do PHP: 7.1.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `bd_tcc_2022`
+-- Banco de dados: `bd_tcc_2022`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_clientes`
+-- Estrutura da tabela `tb_clientes`
 --
 
 CREATE TABLE `tb_clientes` (
@@ -38,7 +39,7 @@ CREATE TABLE `tb_clientes` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_correcao`
+-- Estrutura da tabela `tb_correcao`
 --
 
 CREATE TABLE `tb_correcao` (
@@ -51,7 +52,7 @@ CREATE TABLE `tb_correcao` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_professores`
+-- Estrutura da tabela `tb_professores`
 --
 
 CREATE TABLE `tb_professores` (
@@ -65,19 +66,19 @@ CREATE TABLE `tb_professores` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tb_professores`
+-- Extraindo dados da tabela `tb_professores`
 --
 
 INSERT INTO `tb_professores` (`id`, `nome`, `email`, `senha`, `graduacao`, `dt_validade`, `id_tp_redacao`) VALUES
-(5, 'fabio', 'fabio@gmail.com', 'fabio', 'mestrado', '0000-00-00', 2),
+(5, 'FÃ¡bio Almeida', 'fabio@gmail.com', 'fabio', 'doutorado', '0000-00-00', 1),
 (6, 'Ariane', 'ariane@gmail.com', '123456', 'posmestrado', '0000-00-00', 2),
 (8, 'Vini', 'vinicius@gmail.com', '12345', 'especial', '2022-09-11', 2),
-(9, 'Jose', 'Jose@jose.com', '123', 'posdouturado', '2022-09-25', 1);
+(9, 'JosÃ©', 'Jose@jose.com', '123', 'posdouturado', '2022-09-25', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_redacao`
+-- Estrutura da tabela `tb_redacao`
 --
 
 CREATE TABLE `tb_redacao` (
@@ -92,7 +93,7 @@ CREATE TABLE `tb_redacao` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_status_redacao`
+-- Estrutura da tabela `tb_status_redacao`
 --
 
 CREATE TABLE `tb_status_redacao` (
@@ -103,7 +104,7 @@ CREATE TABLE `tb_status_redacao` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_tp_redacao`
+-- Estrutura da tabela `tb_tp_redacao`
 --
 
 CREATE TABLE `tb_tp_redacao` (
@@ -112,19 +113,20 @@ CREATE TABLE `tb_tp_redacao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tb_tp_redacao`
+-- Extraindo dados da tabela `tb_tp_redacao`
 --
 
 INSERT INTO `tb_tp_redacao` (`id`, `nome`) VALUES
 (1, 'ENEM'),
 (2, 'Vunesp'),
 (3, 'Unicamp'),
-(4, 'ACT');
+(4, 'ACT'),
+(6, 'USP');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_usuarios`
+-- Estrutura da tabela `tb_usuarios`
 --
 
 CREATE TABLE `tb_usuarios` (
@@ -134,47 +136,47 @@ CREATE TABLE `tb_usuarios` (
   `rg` varchar(12) NOT NULL,
   `email` varchar(40) NOT NULL,
   `senha` varchar(200) NOT NULL,
-  `cep` varchar(9) NOT NULL,
   `perfil` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tb_usuarios`
+-- Extraindo dados da tabela `tb_usuarios`
 --
 
-INSERT INTO `tb_usuarios` (`id`, `nome`, `cpf`, `rg`, `email`, `senha`, `cep`, `perfil`) VALUES
-(1, 'Eduardo Namiuti', '121414214', '2414224224', 'eduardo@gmail.com', '12345', '440113', 'admin'),
-(9, 'Bryan Ormond', '514354235345', '12313123123', 'bryan@gmail.com', 'bryan123', '548990485', 'admin'),
-(10, 'Guilherme', '43748739885', '119223345', 'guilherme@gmail.com', '12345', '1213556', 'user'),
-(11, 'Miguel', '34684332567', '4373836585', 'miguel@gmail.com', 'portugal123', '788764788', 'user'),
-(12, 'Guilherme', '23532532535', '35444323535', 'guilherme@guilherme.com', '1234', '454524425', 'admin'),
-(16, 'test', '333.555.666-77', '5353515356', 'testacc@gmail.com', '123', '454356789', 'user');
+INSERT INTO `tb_usuarios` (`id`, `nome`, `cpf`, `rg`, `email`, `senha`, `perfil`) VALUES
+(9, 'Bryan Ormond', '514354235345', '12313123123', 'bryan@gmail.com', 'bryan123', 'admin'),
+(10, 'Guilherme', '43748739885', '119223345', 'guilherme@gmail.com', '12345', 'user'),
+(11, 'Miguel', '34684332567', '4373836585', 'miguel@gmail.com', 'portugal123', 'user'),
+(12, 'Guilherme', '23532532535', '35444323535', 'guilherme@guilherme.com', '1234', 'admin'),
+(19, 'Eduardo', '123.123.123-12', '50501', 'eduardo@gmail.com', '12345', 'admin'),
+(20, 'Bryan12', '111.111.111-11', '22222222', 'aa@aa.com', 'bryan', 'user'),
+(21, 'Bryan', '111.111.111-12', '111111111111', 'aa@aa.com', '123', 'admin');
 
 --
--- Indexes for dumped tables
+-- Índices para tabelas despejadas
 --
 
 --
--- Indexes for table `tb_clientes`
+-- Índices para tabela `tb_clientes`
 --
 ALTER TABLE `tb_clientes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_correcao`
+-- Índices para tabela `tb_correcao`
 --
 ALTER TABLE `tb_correcao`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `status` (`status`);
 
 --
--- Indexes for table `tb_professores`
+-- Índices para tabela `tb_professores`
 --
 ALTER TABLE `tb_professores`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_redacao`
+-- Índices para tabela `tb_redacao`
 --
 ALTER TABLE `tb_redacao`
   ADD PRIMARY KEY (`id`),
@@ -182,60 +184,60 @@ ALTER TABLE `tb_redacao`
   ADD UNIQUE KEY `tp_redacao` (`tp_redacao`);
 
 --
--- Indexes for table `tb_status_redacao`
+-- Índices para tabela `tb_status_redacao`
 --
 ALTER TABLE `tb_status_redacao`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `status` (`status`);
 
 --
--- Indexes for table `tb_tp_redacao`
+-- Índices para tabela `tb_tp_redacao`
 --
 ALTER TABLE `tb_tp_redacao`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_usuarios`
+-- Índices para tabela `tb_usuarios`
 --
 ALTER TABLE `tb_usuarios`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `cpf` (`cpf`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT for table `tb_professores`
+-- AUTO_INCREMENT de tabela `tb_professores`
 --
 ALTER TABLE `tb_professores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `tb_tp_redacao`
+-- AUTO_INCREMENT de tabela `tb_tp_redacao`
 --
 ALTER TABLE `tb_tp_redacao`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `tb_usuarios`
+-- AUTO_INCREMENT de tabela `tb_usuarios`
 --
 ALTER TABLE `tb_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- Constraints for dumped tables
+-- Restrições para despejos de tabelas
 --
 
 --
--- Constraints for table `tb_redacao`
+-- Limitadores para a tabela `tb_redacao`
 --
 ALTER TABLE `tb_redacao`
   ADD CONSTRAINT `tb_redacao_ibfk_1` FOREIGN KEY (`id`) REFERENCES `tb_clientes` (`id`),
   ADD CONSTRAINT `tb_redacao_ibfk_2` FOREIGN KEY (`id_status_redacao`) REFERENCES `tb_correcao` (`id`);
 
 --
--- Constraints for table `tb_status_redacao`
+-- Limitadores para a tabela `tb_status_redacao`
 --
 ALTER TABLE `tb_status_redacao`
   ADD CONSTRAINT `tb_status_redacao_ibfk_1` FOREIGN KEY (`status`) REFERENCES `tb_redacao` (`id_status_redacao`);

@@ -10,8 +10,7 @@
         $id = $_GET['id'];
         $nome = $_GET['nome'];
         $rg = $_GET['rg'];
-        $cpf = $_GET['cpf']; 
-        $cep = $_GET['cep'];
+        $cpf = $_GET['cpf'];
         $senha = $_GET['senha'];
         $email = $_GET['email'];
         $perfil = $_GET['perfil'];
@@ -21,7 +20,6 @@
             nome = '$nome',
             rg = '$rg', 
             cpf = '$cpf', 
-            cep = '$cep', 
             senha = '$senha', 
             email = '$email', 
             perfil = '$perfil'

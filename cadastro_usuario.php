@@ -306,11 +306,6 @@
                                                     <label for="exampleInputEmail1">Senha*</label>
                                                     <input type="password" class="form-control" placeholder="Digite senha" name="senha" id="senha" required>
                                                 </div>
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">CEP*</label>
-
-                                                    <input type="text" class="form-control" placeholder="Digite o cep" name="cep" id="cep" required>
-                                                </div>
                                                 
                                                 <input type="hidden" value="usuarios" name="tipo_insert" id="tipo_insert">
                                                 

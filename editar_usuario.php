@@ -16,7 +16,6 @@
             $rg_retorno = $consulta_count['rg'];
             $email_retorno = $consulta_count['email'];
             $senha_retorno = $consulta_count['senha'];
-            $cep_retorno = $consulta_count['cep'];
             $perfil_retorno = $consulta_count['perfil'];
         }
             
@@ -218,10 +217,6 @@
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Senha</label>
                                                     <input type="password" class="form-control" placeholder="Digite senha" name="senha" id="senha" required value='<?php echo $senha_retorno; ?>'>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">CEP</label>
-                                                    <input type="text" class="form-control" placeholder="Digite o cep" name="cep" id="cep" required value='<?php echo $cep_retorno; ?>'>
                                                 </div>
                                                 
                                                 <input type="hidden" value="usuarios" name="edita_insert" id="edita_insert">

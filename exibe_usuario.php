@@ -225,7 +225,6 @@
           <th>Id</th>
           <th>Nome</th>
           <th>Perfil</th>
-          <th>CEP</th>
           <th>CPF</th>
           <th>Email</th>    
         </tr>     
@@ -241,7 +240,6 @@
           <th>Id</th>
           <th>Nome</th>
           <th>Perfil</th>
-          <th>CEP</th>
           <th>CPF</th>
           <th>Email</th>    
         </tr>    
